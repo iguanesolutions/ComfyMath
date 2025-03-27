@@ -2,7 +2,9 @@ import math
 
 from typing import Any, Callable, Mapping
 
-DEFAULT_INT = ("INT", {"default": 0})
+from comfy.comfy_types import IO
+
+DEFAULT_INT = (IO.INT, {"default": 0})
 
 INT_UNARY_OPERATIONS: Mapping[str, Callable[[int], int]] = {
     "Abs": lambda a: abs(a),
@@ -60,7 +62,7 @@ class IntUnaryOperation:
             "required": {"op": (list(INT_UNARY_OPERATIONS.keys()),), "a": DEFAULT_INT}
         }
 
-    RETURN_TYPES = ("INT",)
+    RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
     CATEGORY = "math/int"
 
@@ -75,7 +77,7 @@ class IntUnaryCondition:
             "required": {"op": (list(INT_UNARY_CONDITIONS.keys()),), "a": DEFAULT_INT}
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/int"
 
@@ -94,7 +96,7 @@ class IntBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("INT",)
+    RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
     CATEGORY = "math/int"
 
@@ -113,7 +115,7 @@ class IntBinaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/int"
 

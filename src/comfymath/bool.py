@@ -1,6 +1,8 @@
 from typing import Any, Callable, Mapping
 
-DEFAULT_BOOL = ("BOOLEAN", {"default": False})
+from comfy.comfy_types import IO
+
+DEFAULT_BOOL = (IO.BOOLEAN, {"default": False})
 
 
 BOOL_UNARY_OPERATIONS: Mapping[str, Callable[[bool], bool]] = {
@@ -45,7 +47,7 @@ class BoolBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("BOOLEAN",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/bool"
 

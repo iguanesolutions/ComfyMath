@@ -3,13 +3,14 @@ from typing import Any, Mapping
 from .vec import VEC2_ZERO, VEC3_ZERO, VEC4_ZERO
 from .types import Number, Vec2, Vec3, Vec4
 
+from comfy.comfy_types import IO
 
 class BoolToInt:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": ("BOOLEAN", {"default": False})}}
 
-    RETURN_TYPES = ("INT",)
+    RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -20,7 +21,7 @@ class BoolToInt:
 class IntToBool:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("INT", {"default": 0})}}
+        return {"required": {"a": (IO.INT, {"default": 0})}}
 
     RETURN_TYPES = ("BOOLEAN",)
     FUNCTION = "op"
@@ -35,7 +36,7 @@ class FloatToInt:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": ("FLOAT", {"default": 0.0, "round": False})}}
 
-    RETURN_TYPES = ("INT",)
+    RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -46,7 +47,7 @@ class FloatToInt:
 class IntToFloat:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("INT", {"default": 0})}}
+        return {"required": {"a": (IO.INT, {"default": 0})}}
 
     RETURN_TYPES = ("FLOAT",)
     FUNCTION = "op"
@@ -59,7 +60,7 @@ class IntToFloat:
 class IntToNumber:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("INT", {"default": 0})}}
+        return {"required": {"a": (IO.INT, {"default": 0})}}
 
     RETURN_TYPES = ("NUMBER",)
     FUNCTION = "op"
@@ -74,7 +75,7 @@ class NumberToInt:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": ("NUMBER", {"default": 0.0})}}
 
-    RETURN_TYPES = ("INT",)
+    RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 

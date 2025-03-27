@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Any, Mapping, Sequence, Tuple
 
+from comfy.comfy_types import IO
+
 
 SDXL_SUPPORTED_RESOLUTIONS = [
     (1024, 1024, 1.0),
@@ -71,7 +73,7 @@ class Resolution(ABC):
             }
         }
 
-    RETURN_TYPES = ("INT", "INT")
+    RETURN_TYPES = (IO.INT, IO.INT)
     RETURN_NAMES = ("width", "height")
     FUNCTION = "op"
     CATEGORY = "math/graphics"
@@ -88,9 +90,9 @@ class NearestResolution(ABC):
 
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"image": ("IMAGE",)}}
+        return {"required": {"image": (IO.IMAGE,)}}
 
-    RETURN_TYPES = ("INT", "INT")
+    RETURN_TYPES = (IO.INT, IO.INT)
     RETURN_NAMES = ("width", "height")
     FUNCTION = "op"
     CATEGORY = "math/graphics"

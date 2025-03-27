@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import Any, Callable, Mapping
 
+from comfy.comfy_types import IO
+
 from .float import (
     FLOAT_UNARY_OPERATIONS,
     FLOAT_UNARY_CONDITIONS,
@@ -9,7 +11,7 @@ from .float import (
 )
 from .types import Number
 
-DEFAULT_NUMBER = ("NUMBER", {"default": 0.0})
+DEFAULT_NUMBER = (IO.NUMBER, {"default": 0.0})
 
 
 class NumberUnaryOperation:
@@ -22,7 +24,7 @@ class NumberUnaryOperation:
             }
         }
 
-    RETURN_TYPES = ("NUMBER",)
+    RETURN_TYPES = (IO.NUMBER,)
     FUNCTION = "op"
     CATEGORY = "math/number"
 
@@ -40,7 +42,7 @@ class NumberUnaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/Number"
 
@@ -59,7 +61,7 @@ class NumberBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("NUMBER",)
+    RETURN_TYPES = (IO.NUMBER,)
     FUNCTION = "op"
     CATEGORY = "math/number"
 
@@ -78,7 +80,7 @@ class NumberBinaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/float"
 

@@ -2,7 +2,9 @@ import math
 
 from typing import Any, Callable, Mapping
 
-DEFAULT_FLOAT = ("FLOAT", {"default": 0.0, "step": 0.001, "round": False})
+from comfy.comfy_types import IO
+
+DEFAULT_FLOAT = (IO.FLOAT, {"default": 0.0, "step": 0.001, "round": False})
 
 FLOAT_UNARY_OPERATIONS: Mapping[str, Callable[[float], float]] = {
     "Neg": lambda a: -a,
@@ -87,7 +89,7 @@ class FloatUnaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/float"
 
@@ -105,7 +107,7 @@ class FloatUnaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOLEAN",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/float"
 
@@ -124,7 +126,7 @@ class FloatBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/float"
 
@@ -143,7 +145,7 @@ class FloatBinaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOLEAN",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/float"
 
