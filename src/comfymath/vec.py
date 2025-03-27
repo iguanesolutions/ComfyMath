@@ -2,6 +2,8 @@ import numpy
 
 from typing import Any, Callable, Mapping
 
+from comfy.comfy_types import IO
+
 from .types import Vec2, Vec3, Vec4
 
 VEC2_ZERO = (0.0, 0.0)
@@ -107,7 +109,7 @@ class Vec2ToScalarUnaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec2"
 
@@ -125,7 +127,7 @@ class Vec2UnaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/vec2"
 
@@ -165,7 +167,7 @@ class Vec2ToScalarBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec2"
 
@@ -184,7 +186,7 @@ class Vec2BinaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec2"
 
@@ -199,7 +201,7 @@ class Vec2ScalarOperation:
             "required": {
                 "op": (list(VEC_SCALAR_OPERATION.keys()),),
                 "a": DEFAULT_VEC2,
-                "b": ("FLOAT",),
+                "b": (IO.FLOAT,),
             }
         }
 
@@ -239,7 +241,7 @@ class Vec3ToScalarUnaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec3"
 
@@ -257,7 +259,7 @@ class Vec3UnaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec3"
 
@@ -297,7 +299,7 @@ class Vec3ToScalarBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec3"
 
@@ -316,7 +318,7 @@ class Vec3BinaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec3"
 
@@ -331,7 +333,7 @@ class Vec3ScalarOperation:
             "required": {
                 "op": (list(VEC_SCALAR_OPERATION.keys()),),
                 "a": DEFAULT_VEC3,
-                "b": ("FLOAT",),
+                "b": (IO.FLOAT,),
             }
         }
 
@@ -371,7 +373,7 @@ class Vec4ToScalarUnaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec4"
 
@@ -389,7 +391,7 @@ class Vec4UnaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/vec4"
 
@@ -429,7 +431,7 @@ class Vec4ToScalarBinaryOperation:
             }
         }
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/vec4"
 
@@ -448,7 +450,7 @@ class Vec4BinaryCondition:
             }
         }
 
-    RETURN_TYPES = ("BOOL",)
+    RETURN_TYPES = (IO.BOOLEAN,)
     FUNCTION = "op"
     CATEGORY = "math/vec4"
 
@@ -463,7 +465,7 @@ class Vec4ScalarOperation:
             "required": {
                 "op": (list(VEC_SCALAR_OPERATION.keys()),),
                 "a": DEFAULT_VEC4,
-                "b": ("FLOAT",),
+                "b": (IO.FLOAT,),
             }
         }
 

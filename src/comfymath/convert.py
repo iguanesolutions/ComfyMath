@@ -8,7 +8,7 @@ from comfy.comfy_types import IO
 class BoolToInt:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("BOOLEAN", {"default": False})}}
+        return {"required": {"a": (IO.BOOLEAN, {"default": False})}}
 
     RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
@@ -34,7 +34,7 @@ class IntToBool:
 class FloatToInt:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("FLOAT", {"default": 0.0, "round": False})}}
+        return {"required": {"a": (IO.FLOAT, {"default": 0.0, "round": False})}}
 
     RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
@@ -49,7 +49,7 @@ class IntToFloat:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": (IO.INT, {"default": 0})}}
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -62,7 +62,7 @@ class IntToNumber:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": (IO.INT, {"default": 0})}}
 
-    RETURN_TYPES = ("NUMBER",)
+    RETURN_TYPES = (IO.NUMBER,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -73,7 +73,7 @@ class IntToNumber:
 class NumberToInt:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("NUMBER", {"default": 0.0})}}
+        return {"required": {"a": (IO.NUMBER, {"default": 0.0})}}
 
     RETURN_TYPES = (IO.INT,)
     FUNCTION = "op"
@@ -86,9 +86,9 @@ class NumberToInt:
 class FloatToNumber:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("FLOAT", {"default": 0.0, "round": False})}}
+        return {"required": {"a": (IO.FLOAT, {"default": 0.0, "round": False})}}
 
-    RETURN_TYPES = ("NUMBER",)
+    RETURN_TYPES = (IO.NUMBER,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -99,9 +99,9 @@ class FloatToNumber:
 class NumberToFloat:
     @classmethod
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
-        return {"required": {"a": ("NUMBER", {"default": 0.0})}}
+        return {"required": {"a": (IO.NUMBER, {"default": 0.0})}}
 
-    RETURN_TYPES = ("FLOAT",)
+    RETURN_TYPES = (IO.FLOAT,)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -114,8 +114,8 @@ class ComposeVec2:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {
             "required": {
-                "x": ("FLOAT", {"default": 0.0, "round": False}),
-                "y": ("FLOAT", {"default": 0.0, "round": False}),
+                "x": (IO.FLOAT, {"default": 0.0, "round": False}),
+                "y": (IO.FLOAT, {"default": 0.0, "round": False}),
             }
         }
 
@@ -132,7 +132,7 @@ class FillVec2:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {
             "required": {
-                "a": ("FLOAT", {"default": 0.0, "round": False}),
+                "a": (IO.FLOAT, {"default": 0.0, "round": False}),
             }
         }
 
@@ -149,7 +149,7 @@ class BreakoutVec2:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": ("VEC2", {"default": VEC2_ZERO})}}
 
-    RETURN_TYPES = ("FLOAT", "FLOAT")
+    RETURN_TYPES = (IO.FLOAT, IO.FLOAT)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -162,9 +162,9 @@ class ComposeVec3:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {
             "required": {
-                "x": ("FLOAT", {"default": 0.0}),
-                "y": ("FLOAT", {"default": 0.0}),
-                "z": ("FLOAT", {"default": 0.0}),
+                "x": (IO.FLOAT, {"default": 0.0}),
+                "y": (IO.FLOAT, {"default": 0.0}),
+                "z": (IO.FLOAT, {"default": 0.0}),
             }
         }
 
@@ -181,7 +181,7 @@ class FillVec3:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {
             "required": {
-                "a": ("FLOAT", {"default": 0.0}),
+                "a": (IO.FLOAT, {"default": 0.0}),
             }
         }
 
@@ -198,7 +198,7 @@ class BreakoutVec3:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": ("VEC3", {"default": VEC3_ZERO})}}
 
-    RETURN_TYPES = ("FLOAT", "FLOAT", "FLOAT")
+    RETURN_TYPES = (IO.FLOAT, IO.FLOAT, IO.FLOAT)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
@@ -211,10 +211,10 @@ class ComposeVec4:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {
             "required": {
-                "x": ("FLOAT", {"default": 0.0}),
-                "y": ("FLOAT", {"default": 0.0}),
-                "z": ("FLOAT", {"default": 0.0}),
-                "w": ("FLOAT", {"default": 0.0}),
+                "x": (IO.FLOAT, {"default": 0.0}),
+                "y": (IO.FLOAT, {"default": 0.0}),
+                "z": (IO.FLOAT, {"default": 0.0}),
+                "w": (IO.FLOAT, {"default": 0.0}),
             }
         }
 
@@ -231,7 +231,7 @@ class FillVec4:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {
             "required": {
-                "a": ("FLOAT", {"default": 0.0}),
+                "a": (IO.FLOAT, {"default": 0.0}),
             }
         }
 
@@ -248,7 +248,7 @@ class BreakoutVec4:
     def INPUT_TYPES(cls) -> Mapping[str, Any]:
         return {"required": {"a": ("VEC4", {"default": VEC4_ZERO})}}
 
-    RETURN_TYPES = ("FLOAT", "FLOAT", "FLOAT", "FLOAT")
+    RETURN_TYPES = (IO.FLOAT, IO.FLOAT, IO.FLOAT, IO.FLOAT)
     FUNCTION = "op"
     CATEGORY = "math/conversion"
 
